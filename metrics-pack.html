@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day 23 Metrics Pack — Nguyễn Đức Anh</title>
+<style>
+:root{
+  --bg:#f5f7fb; --paper:#ffffff; --ink:#182230; --muted:#667085;
+  --line:#e4e7ec; --brand:#155eef; --brand2:#004eeb; --good:#067647;
+  --warn:#b54708; --warnbg:#fffaeb; --soft:#eef4ff; --shadow:0 10px 30px rgba(16,24,40,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.58}
+a{color:var(--brand);text-decoration:none}
+.hero{background:linear-gradient(135deg,#0b3b8f 0%,#155eef 55%,#53b1fd 100%);color:#fff;padding:64px 24px 56px}
+.wrap{max-width:1180px;margin:auto}
+.hero h1{font-size:clamp(34px,5vw,64px);line-height:1.02;margin:0 0 14px;letter-spacing:-.035em}
+.hero p{max-width:820px;margin:0;color:#eaf2ff;font-size:18px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.badge{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:7px 11px;border-radius:999px;font-size:13px}
+main{max-width:1180px;margin:-28px auto 60px;padding:0 20px}
+.grid{display:grid;grid-template-columns:260px 1fr;gap:22px;align-items:start}
+nav{position:sticky;top:16px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+nav a{display:block;padding:8px 10px;border-radius:9px;color:#344054;font-size:14px}
+nav a:hover{background:var(--soft);color:var(--brand2)}
+.content{display:grid;gap:18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}
+.card h2{font-size:28px;margin:0 0 18px;letter-spacing:-.02em}
+.card h3{font-size:19px;margin:26px 0 10px}
+.kicker{font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand)}
+.note{border-left:4px solid var(--brand);background:var(--soft);padding:14px 16px;border-radius:10px;margin:14px 0}
+.warn{border-left-color:#f79009;background:var(--warnbg);color:#7a2e0e}
+.good{border-left-color:#12b76a;background:#ecfdf3;color:#05603a}
+table{width:100%;border-collapse:collapse;margin:12px 0 8px;font-size:14px}
+th,td{padding:12px 13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f9fafb;color:#475467;font-weight:650}
+code{background:#f2f4f7;border:1px solid #eaecf0;padding:2px 6px;border-radius:6px;font-size:.92em}
+.metric{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0}
+.metric>div{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fbfcfe}
+.metric b{display:block;margin-bottom:6px}
+.loop{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:stretch;margin:15px 0}
+.step{border:1px solid #b2ccff;background:#f5f8ff;border-radius:14px;padding:14px;min-height:112px}
+.step span{display:block;color:var(--brand);font-size:12px;font-weight:800;text-transform:uppercase;margin-bottom:7px}
+.arrow{text-align:center;color:var(--muted);font-size:22px;margin:-2px 0 4px}
+.checks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.check{background:#f8fafc;border:1px solid var(--line);border-radius:11px;padding:10px 12px;font-size:14px}
+.footer{color:var(--muted);font-size:13px;text-align:center;padding:28px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}nav{position:relative;top:auto}.metric,.loop{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.metric,.loop,.checks{grid-template-columns:1fr}.card{padding:20px}.hero{padding-top:44px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker" style="color:#d1e9ff">Track 1 · Day 23 · Product Metrics</div>
+    <h1>AI Deadline Copilot<br/>Metrics Pack</h1>
+    <p>Một chuỗi quyết định từ core action → nature/cadence → metric system & retention → product loop → tracking.</p>
+    <div class="badges">
+      <span class="badge">Nguyễn Đức Anh</span>
+      <span class="badge">MHV 01870</span>
+      <span class="badge">Use case: Assignment next actions</span>
+      <span class="badge">8 core events</span>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="grid">
+<nav>
+  <b>Metrics Pack</b>
+  <a href="#scope">00 — Phạm vi</a>
+  <a href="#core">01 — Core Action</a>
+  <a href="#nature">02 — Nature & Cadence</a>
+  <a href="#metrics">03 — Metric System</a>
+  <a href="#retention">04 — Retention</a>
+  <a href="#loop">05 — Product Loop</a>
+  <a href="#tracking">06 — Tracking</a>
+  <a href="#revision">07 — Revision</a>
+</nav>
+
+<div class="content">
+<section class="card">
+  <div class="note warn"><b>Academic-integrity checkpoint.</b> Các nội dung đánh dấu <b>USER CONFIRMATION REQUIRED</b> là candidate do AI hỗ trợ brainstorm. Học viên phải tự xác nhận/rewrite core action, cadence, metric hypothesis và reflection trước khi nộp.</div>
+</section>
+
+<section class="card" id="scope">
+  <div class="kicker">Phase 0</div><h2>00 — Phạm vi</h2>
+  <table>
+    <tr><th>Dự án</th><td>AI Deadline Copilot — trợ lý biến deadline học tập thành các bước hành động rõ ràng.</td></tr>
+    <tr><th>Persona</th><td>Sinh viên đại học đang xử lý nhiều assignment có deadline song song.</td></tr>
+    <tr><th>Core job</th><td>“Tôi cần biết việc cụ thể tiếp theo phải làm và hoàn thành từng phần đủ sớm để không dồn toàn bộ assignment sát deadline.”</td></tr>
+    <tr><th>Use case</th><td>Theo dõi và hoàn thành next actions của <b>một assignment đang active</b>.</td></tr>
+  </table>
+</section>
+
+<section class="card" id="core">
+  <div class="kicker">Phase 1</div><h2>01 — Core Action</h2>
+  <div class="note warn"><b>USER CONFIRMATION REQUIRED:</b> Candidate core action: <b>hoàn thành một next action đã được lên kế hoạch cho assignment</b>.</div>
+  <table>
+    <tr><th>Target user</th><td>Sinh viên có ít nhất một assignment đang active.</td></tr>
+    <tr><th>Object</th><td><code>study_task</code> / <code>next_action</code> gắn với <code>assignment_id</code>.</td></tr>
+    <tr><th>Completion rule</th><td>State transition non-completed → <code>completed</code> được persist thành công.</td></tr>
+    <tr><th>Core value</th><td>Assignment có tiến triển thực; remaining work giảm; next step rõ hơn.</td></tr>
+    <tr><th>Core value event</th><td><code>study_task_completed</code></td></tr>
+  </table>
+  <h3>Tự kiểm 5 tiêu chí</h3>
+  <div class="checks">
+    <div class="check">✅ Gần core value</div><div class="check">✅ Có thể lặp lại</div>
+    <div class="check">✅ Có thể quan sát</div><div class="check">✅ Có ý nghĩa</div>
+    <div class="check">✅ Có thể tác động</div>
+  </div>
+</section>
+
+<section class="card" id="nature">
+  <div class="kicker">Phase 2</div><h2>02 — Nature & Cadence</h2>
+  <table>
+    <tr><th>Intent</th><td>Tạo tiến triển thật cho assignment và giảm rủi ro dồn việc.</td></tr>
+    <tr><th>Natural trigger</th><td>Assignment mới, remaining work, work session, prerequisite vừa hoàn tất, deadline.</td></tr>
+    <tr><th>Effort</th><td>Biến thiên theo task; cognitive effort cao hơn một thao tác UI.</td></tr>
+    <tr><th>Value timing</th><td>Immediate + cumulative.</td></tr>
+    <tr><th>Saved state</th><td>Completion history, progress, remaining tasks, next actionable item.</td></tr>
+    <tr><th>Repeat condition</th><td>Còn next action hoặc xuất hiện assignment mới.</td></tr>
+  </table>
+  <div class="note warn"><b>USER CONFIRMATION REQUIRED:</b> Candidate behavior = <b>progress + project-based</b>. Candidate cadence = <b>active-assignment lifecycle</b> ở cấp <b>user × assignment</b>; weekly chỉ là reporting roll-up, không phải natural cadence.</div>
+</section>
+
+<section class="card" id="metrics">
+  <div class="kicker">Phase 3</div><h2>03 — Metric System</h2>
+  <h3>Activation</h3>
+  <div class="metric">
+    <div><b>Start</b><code>assignment_plan_created</code></div>
+    <div><b>First value</b><code>study_task_completed</code></div>
+    <div><b>Window</b>Trong phase đầu của assignment lifecycle và trước deadline; calibrate bằng dữ liệu thật.</div>
+  </div>
+
+  <h3>Engagement</h3>
+  <div class="metric">
+    <div><b>Frequency</b>Qualified task completions / active assignment</div>
+    <div><b>Depth</b>Planned task completion ratio</div>
+    <div><b>Không dùng</b>DAU/time-in-app làm core engagement.</div>
+  </div>
+
+  <h3>North Star Metric</h3>
+  <div class="note"><b>Qualified Next Actions Completed per Active Assignment</b><br/>
+  Unit of value = <code>study_task_completed</code> · Quality = planned, persisted, before deadline, non-duplicate · Frequency = per active-assignment lifecycle.</div>
+
+  <h3>Leading indicators</h3>
+  <table>
+    <tr><th>Metric</th><th>Signal</th></tr>
+    <tr><td>Plan-to-first-completion rate</td><td>Plan đủ actionable để tạo first value.</td></tr>
+    <tr><td>Next-action scheduled coverage</td><td>Phiên sau có bước rõ ràng, restart cost thấp.</td></tr>
+    <tr><td>Start → completion conversion</td><td>Task decomposition/effort phù hợp.</td></tr>
+  </table>
+
+  <h3>Counter-metrics</h3>
+  <table>
+    <tr><th>Metric</th><th>Bẫy</th></tr>
+    <tr><td>Assignment missed-deadline rate</td><td>Task completed tăng nhưng outcome cuối xấu.</td></tr>
+    <tr><td>Task reopen rate</td><td>Completion không phản ánh công việc thật sự xong.</td></tr>
+    <tr><td>Micro-task inflation rate</td><td>Chia task quá nhỏ để game NSM.</td></tr>
+  </table>
+</section>
+
+<section class="card" id="retention">
+  <div class="kicker">Phase 3</div><h2>04 — Retention Definition</h2>
+  <table>
+    <tr><th>Unit</th><td><code>user_id</code></td></tr>
+    <tr><th>Cohort entry</th><td>First qualified <code>study_task_completed</code> trong cohort assignment.</td></tr>
+    <tr><th>Return event</th><td>Qualified <code>study_task_completed</code> trên một <code>assignment_id</code> khác ở assignment cycle kế tiếp.</td></tr>
+    <tr><th>Window</th><td>Project-based custom bracket: từ plan/create của next assignment tới deadline của assignment đó.</td></tr>
+    <tr><th>Threshold</th><td>≥ 1 qualified completion trong next eligible assignment cycle.</td></tr>
+    <tr><th>Segment</th><td>Sinh viên có ≥ 2 valid assignments trong observation period; loại internal/test/bot.</td></tr>
+  </table>
+  <div class="note good"><b>Không dùng D7 mặc định:</b> tuần không có assignment là absence of need, không đồng nghĩa churn.</div>
+</section>
+
+<section class="card" id="loop">
+  <div class="kicker">Phase 4</div><h2>05 — Product Loop</h2>
+  <h3>Cycle 1</h3>
+  <div class="loop">
+    <div class="step"><span>Natural trigger</span>Assignment active, còn work.</div>
+    <div class="step"><span>Core action</span>Complete planned next action.</div>
+    <div class="step"><span>Immediate value</span>Progress tăng, remaining work giảm.</div>
+    <div class="step"><span>Saved state</span>History + progress + next action.</div>
+  </div>
+  <div class="arrow">↓ next natural trigger</div>
+  <h3>Cycle 2</h3>
+  <div class="loop">
+    <div class="step"><span>Natural trigger</span>Next work session / prerequisite xong.</div>
+    <div class="step"><span>Core action</span>Complete next planned action.</div>
+    <div class="step"><span>Repeat value</span>Assignment tiến gần completion.</div>
+    <div class="step"><span>Investment</span>State tiếp tục được lưu cho phiên sau.</div>
+  </div>
+  <div class="note warn"><b>USER CONFIRMATION REQUIRED:</b> Candidate hypothesis: nếu progress loop hoạt động, <b>project-cycle retention tăng</b> trong các assignment cycle kế tiếp vì saved progress + next-action state làm giảm restart cost.</div>
+</section>
+
+<section class="card" id="tracking">
+  <div class="kicker">Phase 4</div><h2>06 — Tracking nhanh</h2>
+  <table>
+    <thead><tr><th>Event</th><th>Ghi khi</th><th>Metric</th></tr></thead>
+    <tbody>
+      <tr><td><code>assignment_added</code></td><td>Assignment record lưu thành công.</td><td>Eligibility/funnel context</td></tr>
+      <tr><td><code>assignment_plan_created</code></td><td>Plan + ≥1 next action commit thành công.</td><td>Activation start</td></tr>
+      <tr><td><code>next_action_scheduled</code></td><td>Task chuyển unscheduled → scheduled.</td><td>Scheduled coverage</td></tr>
+      <tr><td><code>study_task_started</code></td><td>Task vào <code>in_progress</code> cho attempt hợp lệ.</td><td>Start→completion</td></tr>
+      <tr><td><code>study_task_completed</code></td><td>Persisted transition non-completed → completed.</td><td>Activation, engagement, NSM, retention</td></tr>
+      <tr><td><code>study_task_reopened</code></td><td>Completed → non-completed.</td><td>Reopen rate</td></tr>
+      <tr><td><code>assignment_completed</code></td><td>Assignment state → completed.</td><td>Outcome validation</td></tr>
+      <tr><td><code>assignment_deadline_missed</code></td><td>Server xác nhận now > due_at và chưa completed; chỉ một lần.</td><td>Missed-deadline rate</td></tr>
+    </tbody>
+  </table>
+  <h3>Acceptance criteria</h3>
+  <div class="checks">
+    <div class="check"><b>AC-01</b><br/>Completion event chỉ bắn sau persisted state transition thật.</div>
+    <div class="check"><b>AC-02</b><br/>Reload/retry/autosave không tạo duplicate.</div>
+    <div class="check"><b>AC-03</b><br/>Reopen là event riêng; giữ attempt/transition id.</div>
+    <div class="check"><b>AC-04</b><br/>Deadline missed chỉ ghi một lần/assignment.</div>
+  </div>
+</section>
+
+<section class="card" id="revision">
+  <div class="kicker">Phase 5</div><h2>07 — Revision</h2>
+  <div class="note warn"><b>Học viên tự điền nếu có thay đổi lớn.</b> Ghi rõ đổi core action/cadence/hypothesis gì và vì sao. AI không viết thay rationale/reflection.</div>
+</section>
+</div>
+</div>
+</main>
+<div class="footer">Day 23 Metrics Pack · Nguyễn Đức Anh · 01870</div>
+</body>
+</html>
