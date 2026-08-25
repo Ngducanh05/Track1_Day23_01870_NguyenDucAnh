@@ -1,42 +1,31 @@
-# Track1_Day23_01870_NguyenDucAnh
+# Track1_Day23_MHV_HoVaTen
 
 ## Thông tin bài nộp
 
-- **Họ và tên:** Nguyễn Đức Anh
-- **MHV:** 01870
+- **Họ và tên:** `[Nguyễn Đức Anh]`
+- **MHV:** `[01870]`
 - **Dự án:** AI Deadline Copilot — trợ lý biến deadline học tập thành các bước hành động rõ ràng.
 - **Use case phân tích:** Một sinh viên theo dõi và hoàn thành các next action của một assignment trước deadline.
-- **Metrics Pack dạng trực quan:** [Mở Metrics Pack HTML](./metrics-pack.html)
+- **Metrics Pack dạng trực quan:** [Mở Metrics Pack HTML](https://ngducanh05.github.io/Track1_Day23_01870_NguyenDucAnh/metrics-pack.html)
 - **Metrics Pack dạng Markdown:** [Mở bản Markdown](./metrics-pack.md)
 - **AI Support Log:** [Mở AI Support Log](./ai-support-log.md)
-- **Link public để nộp:** `[DÁN LINK GITHUB PAGES / FIGJAM / NOTION SAU KHI CẤP QUYỀN XEM]`
+- **Link public để nộp:** `[DÁN LINK FIGJAM / SLIDE / NOTION / GITHUB PAGES SAU KHI CẤP QUYỀN XEM]`
 
-> **Academic-integrity checkpoint:** Brief Day 23 cho phép AI brainstorm core-action candidates, phản biện retention, gợi ý event và acceptance criteria; nhưng core action, kết luận cadence, metric hypothesis, rationale/reflection phải do học viên tự quyết định. Vì vậy các mục được đánh dấu **USER CONFIRMATION REQUIRED** trong Metrics Pack là bản tham chiếu cần tôi tự xác nhận/rewrite trước khi nộp.
+> Đây là bản hoàn chỉnh theo dự án mẫu được brief cho phép khi chưa có project cụ thể. Trước khi nộp, hãy thay thông tin cá nhân, kiểm tra lại core action/cadence/metric hypothesis bằng hiểu biết của bạn về dự án thật, rồi cập nhật link public trong README.
 
 ## Điều tôi mang về áp dụng cho dự án thật
 
-> **USER WRITES THIS SECTION BEFORE SUBMISSION.**  
-> Không dùng nguyên văn phần do AI soạn thay cho reflection/rationale cá nhân. Tôi sẽ viết 2–4 ý ngắn sau khi tự bảo vệ core action, cadence và metric hypothesis.
-
-Gợi ý câu hỏi để tự viết:
-1. Metric nào trước đây tôi có xu hướng chọn vì “dashboard quen dùng”, nhưng sau lab thấy không phù hợp nature?
-2. Core action nào thực sự chứng minh sinh viên tiến gần deadline hơn, thay vì chỉ “mở app / hỏi AI”?
-3. Counter-metric nào giúp tránh việc tối ưu số task completed bằng cách chia task quá nhỏ?
-4. Tracking event nào quan trọng nhất để phân biệt “bấm nút” với “value thật sự xảy ra”?
+1. Bắt đầu từ hành vi chứng minh user nhận được value, không bắt đầu từ DAU, lượt mở app hay lượt hỏi AI.
+2. Chọn retention theo natural cadence của use case; project-based retention phù hợp hơn D7 khi nhu cầu chỉ xuất hiện quanh vòng đời một assignment.
+3. Mỗi event phải đại diện cho một trạng thái đã xảy ra và phải tính được ít nhất một metric; event không map về metric sẽ bị loại.
+4. Product loop là một giả thuyết cần kiểm chứng bằng NSM, leading indicators và counter-metrics, không phải danh sách notification/badge.
 
 ## Checklist trước khi nộp
 
-- [x] Repo đúng tên `Track1_Day23_01870_NguyenDucAnh`.
-- [x] Đã điền họ tên và MHV.
-- [x] Đã xác định một dự án, một persona, một use case.
-- [x] Metrics Pack có đủ mục `00–06`.
-- [x] Core Action Card có tự kiểm 5 tiêu chí.
-- [x] Retention có đủ 6 thành phần.
-- [x] Product Loop có ít nhất 2 chu kỳ.
-- [x] Tracking có 4–8 core events và acceptance criteria.
-- [x] AI Support Log phản ánh đúng vai trò AI.
-- [ ] **Tôi đã tự xác nhận/rewrite core action.**
-- [ ] **Tôi đã tự xác nhận/rewrite kết luận cadence.**
-- [ ] **Tôi đã tự xác nhận/rewrite metric hypothesis.**
-- [ ] **Tôi đã tự viết reflection/rationale cá nhân.**
-- [ ] Đã publish `metrics-pack.html` và dán link public ở trên.
+- [ ] Đã điền họ tên và MHV.
+- [ ] Đã thay hoặc xác nhận dự án, persona và core job.
+- [ ] Đã tự bảo vệ được vì sao `study_task_completed` là core value event.
+- [ ] Đã kiểm tra cadence project-based có đúng với dự án thật.
+- [ ] Đã cấp quyền xem cho Metrics Pack và dán link public ở trên.
+- [ ] Đã đọc và chỉnh AI Support Log để phản ánh đúng cách mình đã dùng AI.
+- [ ] Đã đổi tên repository thành `Track1_Day23_MHV_HoVaTen`.
